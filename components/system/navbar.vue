@@ -4,12 +4,13 @@
 	<nav class="navbar">
 		<ul class="navbar__menu">
 			<li class="navbar__item">
-				<a
-					href="#"
+				<NuxtLink
+					:to="'/'"
 					class="navbar__link"
-					><font-awesome-icon
-						:icon="['fas', 'house']" /><span>Home</span
-				></a>
+					><font-awesome-icon :icon="['fas', 'house']" /><span
+						>Home</span
+					></NuxtLink
+				>
 			</li>
 			<li class="navbar__item">
 				<a
@@ -100,6 +101,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 .navbar {
+	z-index: 50;
 	$ref: &;
 	position: fixed;
 	top: $spacer;
@@ -107,8 +109,8 @@ body {
 	background: #fff;
 	border-radius: $borderRadius;
 	padding: $spacer 0;
-	box-shadow: 0 0 40px rgba(0, 0, 0, 0.03);
-	height: calc(100vh - #{$spacer * 4});
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	height: calc(100vh - #{$spacer * 2});
 	&__link {
 		position: relative;
 		display: flex;

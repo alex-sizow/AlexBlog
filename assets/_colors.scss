@@ -1,0 +1,16 @@
+$primary: oklch(62.85% 0.188 274.26);
+$primary-hover: oklch(77.5% 0.109 277.77);
+$second: oklch(64.57% 0.237 312.69);
+$second-hover: oklch(79.95% 0.124 314.4);
+$success: oklch(72.62% 0.15472846081522504 164.015679695029);
+$success-hover: oklch(83.56% 0.102 173.19);
+$info: oklch(61.59% 0.19277391181660775 253.47651406726254);
+$info-hover: oklch(75% 0.125 246.07);
+$warning: oklch(79.48% 0.131 50.56);
+$warning-hover: oklch(
+	87.15% 0.0778592865515033 51.89079287292447
+);
+$danger: oklch(70.64% 0.18868947120223187 14.039630002242099);
+$danger-hover: oklch(83.15% 0.092 9.13);
+$shadow: 1px 1px 2px oklch(55.27% 0.075 278.16),
+	-1px -1px 2px oklch(94.92% 0.025 249.95);

@@ -1,9 +1,22 @@
 <template>
-	<NuxtLayout></NuxtLayout>
+	<div class="container">
+		<NuxtLayout>
+			<div class="page-container"><NuxtPage /></div>
+		</NuxtLayout>
+	</div>
 </template>
 
 <style lang="scss">
-/* Reset and base styles  */
+.page-container {
+	margin-left: 120px;
+	margin-top: 1rem;
+	margin-right: 1rem;
+	padding: 2rem;
+	border-radius: 10px;
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(6px);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
 * {
 	padding: 0px;
 	margin: 0px;
