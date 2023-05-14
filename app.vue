@@ -11,11 +11,11 @@
 	margin-left: 120px;
 	margin-top: 1rem;
 	margin-right: 1rem;
-	padding: 2rem;
+	padding: 1.5rem;
 	border-radius: 10px;
 	backdrop-filter: blur(6px);
 	-webkit-backdrop-filter: blur(6px);
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.37);
 }
 * {
 	padding: 0px;

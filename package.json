@@ -16,6 +16,7 @@
 		"@fortawesome/fontawesome-svg-core": "^6.4.0",
 		"@fortawesome/free-solid-svg-icons": "^6.4.0",
 		"@fortawesome/vue-fontawesome": "^3.0.3",
+		"ky": "^0.33.3",
 		"sass": "^1.62.1"
 	}
 }

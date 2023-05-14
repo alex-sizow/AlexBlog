@@ -10,5 +10,6 @@ export default defineNuxtConfig({
 			},
 		},
 	},
+	plugins: [{ src: '@/plugins/ky.js', mode: 'client' }],
 	css: ['@fortawesome/fontawesome-svg-core/styles.css'],
 });

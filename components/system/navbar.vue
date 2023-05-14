@@ -97,7 +97,7 @@ $transition: $timing ease all;
 }
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
 body {
-	background: #eaeef6;
+	background: linear-gradient(145deg, #ffffff, #dfdede);
 	font-family: 'Open Sans', sans-serif;
 }
 .navbar {
@@ -109,7 +109,7 @@ body {
 	background: #fff;
 	border-radius: $borderRadius;
 	padding: $spacer 0;
-	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.37);
 	height: calc(100vh - #{$spacer * 2});
 	&__link {
 		position: relative;
