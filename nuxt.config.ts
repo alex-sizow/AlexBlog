@@ -1,8 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	modules: ['@nuxtjs/strapi'],
+	modules: ['@nuxtjs/strapi', '@nuxt/content'],
 	strapi: {
-		url: 'http://localhost:1337',
+		url: process.env.API_BASE_URL,
+		prefix: '/api',
+	},
+	content: {
+		documentDriven: true,
 	},
 	vite: {
 		css: {
@@ -14,6 +18,10 @@ export default defineNuxtConfig({
 			},
 		},
 	},
-	plugins: [{ src: '@/plugins/ky.js', mode: 'client' }],
 	css: ['@fortawesome/fontawesome-svg-core/styles.css'],
+	runtimeConfig: {
+		public: {
+			baseApi: process.env.API_BASE_URL,
+		},
+	},
 });

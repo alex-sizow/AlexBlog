@@ -11,23 +11,15 @@ const createDate = (time: string) => {
 	const formatter = new Intl.DateTimeFormat('ru-RU', options);
 	return formatter.format(date);
 };
+const config = useRuntimeConfig();
+const { find } = useStrapi();
 
-const {
-	find,
-	findOne,
-	create,
-	update,
-	delete: remove,
-} = useStrapi();
-
-// Get all restaurants
 const posts: any = await find('posts');
-
-// Get one restaurant by id
 </script>
 
 <template>
 	<div class="main">
+		{{ config }}
 		<NuxtLink
 			:to="`posts/${post.id}'`"
 			v-for="post in posts.data"
@@ -80,29 +72,34 @@ const posts: any = await find('posts');
 			top: 124px;
 			left: 12px;
 			transition: 0.45s;
+			font-weight: 400;
 		}
 		&_description {
 			position: relative;
 			padding: 10px;
 			font-size: 20px;
+			font-weight: 300;
 		}
 		&_date {
 			position: absolute;
 			bottom: 10px;
 			right: 12px;
 			font-size: 10px;
+			font-weight: 300;
 		}
 		&:hover {
 			transition: 0.35s;
 			scale: 1.01;
+			box-shadow: 4px 4px 8px 0 rgba(88, 96, 217, 0.37);
 			img {
 				transition: 0.38s;
 				object-position: 0px -32px;
 				filter: brightness(100%);
 			}
 			span {
-				transition: 0.45s;
-				left: 62px;
+				transition: 0.1s;
+
+				font-size: 20px;
 			}
 			div {
 			}
