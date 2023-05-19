@@ -101,8 +101,6 @@ const posts: any = await find('posts');
 
 				font-size: 20px;
 			}
-			div {
-			}
 		}
 	}
 }
