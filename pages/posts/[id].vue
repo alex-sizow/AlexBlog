@@ -7,7 +7,7 @@ const post = response.data.attributes;
 </script>
 
 <template>
-	<div>{{ text }}</div>
+	<div>{{ post }}</div>
 	<div class="post">
 		<img
 			class="post__image"
@@ -18,7 +18,6 @@ const post = response.data.attributes;
 			<div>{{ post.createdAt }}</div>
 			<div>#tag</div>
 		</div>
-		<ContentDoc />
 
 		<div class="post__body">{{ text }}</div>
 	</div>
