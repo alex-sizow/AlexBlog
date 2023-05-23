@@ -12,13 +12,17 @@
 		"@nuxt/content": "^2.6.0",
 		"@nuxtjs/strapi": "^1.9.1",
 		"@types/node": "^18",
-		"nuxt": "^3.4.3"
+		"nuxt": "^3.4.3",
+		"vite-plugin-md": "^0.21.5"
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.4.0",
 		"@fortawesome/free-solid-svg-icons": "^6.4.0",
 		"@fortawesome/vue-fontawesome": "^3.0.3",
 		"ky": "^0.33.3",
+		"markdown-it": "^13.0.1",
+		"markdown-it-container": "^3.0.0",
+		"nuxt-markdownit": "^2.0.0",
 		"sass": "^1.62.1"
 	}
 }

@@ -5,8 +5,9 @@ const { findOne } = useStrapi();
 const response: any = await findOne('posts', route.id[0]);
 const post = response.data.attributes;
 </script>
+
 <template>
-	<div>{{ post }}</div>
+	<div>{{ text }}</div>
 	<div class="post">
 		<img
 			class="post__image"
@@ -17,9 +18,9 @@ const post = response.data.attributes;
 			<div>{{ post.createdAt }}</div>
 			<div>#tag</div>
 		</div>
-		<div class="post__body">
-			{{ post.text }}
-		</div>
+		<ContentDoc />
+
+		<div class="post__body">{{ text }}</div>
 	</div>
 </template>
 
