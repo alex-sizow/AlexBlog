@@ -1,4 +1,19 @@
-import marked from 'marked';
-import Vue from 'vue';
+import { marked } from 'marked';
 
-Vue.prototype.$marked = marked;
+marked.use({
+	pedantic: false,
+	gfm: true,
+	breaks: false,
+	sanitize: false,
+	smartypants: false,
+	xhtml: false,
+	italic: true,
+});
+
+export default defineNuxtPlugin((nuxtApp) => {
+	return {
+		provide: {
+			marked: (str) => marked.parse(str),
+		},
+	};
+});

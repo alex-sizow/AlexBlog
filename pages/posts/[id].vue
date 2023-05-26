@@ -1,13 +1,15 @@
 <script setup lang="ts">
 const route = useRoute().params;
 const { findOne } = useStrapi();
+const { $marked } = useNuxtApp();
 
 const response: any = await findOne('posts', route.id[0]);
-const post = response.data.attributes;
+const post = response.data.attributes.text;
 </script>
 
 <template>
-	<div>{{ post }}</div>
+	<div v-html="$marked(post)"></div>
+
 	<div class="post">
 		<img
 			class="post__image"
@@ -19,7 +21,7 @@ const post = response.data.attributes;
 			<div>#tag</div>
 		</div>
 
-		<div class="post__body">{{ text }}</div>
+		<div class="post__body">{{}}</div>
 	</div>
 </template>
 
