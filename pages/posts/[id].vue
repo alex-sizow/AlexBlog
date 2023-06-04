@@ -76,7 +76,7 @@ const post = response.data.attributes.text;
 			font-size: 20px;
 		}
 		ul {
-			padding: 0;
+			padding: 2px;
 			list-style: none;
 			counter-reset: li;
 			li {

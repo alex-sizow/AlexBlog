@@ -7,7 +7,6 @@ marked.use({
 	sanitize: false,
 	smartypants: false,
 	xhtml: false,
-	italic: true,
 });
 
 export default defineNuxtPlugin((nuxtApp) => {
