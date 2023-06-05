@@ -71,6 +71,7 @@ const post = response.data.attributes.text;
 		width: 100%;
 		h2 {
 			font-size: 26px;
+			line-height: 20px;
 		}
 		h4 {
 			font-size: 20px;
