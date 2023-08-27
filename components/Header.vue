@@ -18,7 +18,7 @@
 	justify-content: center;
 	align-items: center;
 	gap: 35px;
-	background-color: bisque;
+	background-color: var(--primary-hover);
 	border-radius: 0 0 10px 10px;
 	a {
 		text-decoration: underline;
