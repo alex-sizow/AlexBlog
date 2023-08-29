@@ -1,8 +1,6 @@
 <template>
 	<header class="header">
-		<nuxt-link to="/"
-			><img src="@/public/logo.svg" />
-		</nuxt-link>
+		<nuxt-link to="/"><img src="/logo.svg" /> </nuxt-link>
 		<nuxt-link to="/">Articles</nuxt-link>
 		<nuxt-link to="/">Projects</nuxt-link>
 		<nuxt-link to="/about"> About </nuxt-link>

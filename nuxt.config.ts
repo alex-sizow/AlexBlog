@@ -6,4 +6,10 @@ export default defineNuxtConfig({
 		'@/assets/css/color.css',
 		'@/assets/css/fonts.css',
 	],
+	modules: ['@nuxt/content'],
+	content: {
+		highlight: {
+			theme: 'light-plus',
+		},
+	},
 });
