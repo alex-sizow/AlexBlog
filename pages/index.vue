@@ -1,31 +1,47 @@
-<template>
-	<div class="intro">
-		<p class="intro__hi">Hi, my name name is</p>
-		<h1 class="intro__name">Alex Sizow</h1>
+<script setup lang="ts">
+const { data } = await useAsyncData(() => {
+	return queryContent('/articles/').find();
+});
+</script>
 
-		<div class="intro__photo">
-			<img
-				src="@/assets/images/I.png"
-				alt="I" />
-			<h2 class="intro__photo_about">
-				I’m a frontend developer in love with the Web,
-				browsers, ducks and France
-			</h2>
-			<h3 class="intro__photo_description">
-				Here you can find my thoughts on web development, some
-				of my
-				<a
-					href="https://github.com/alex-sizow"
-					target="_blank"
-					>projects</a
-				>, and information
-				<nuxt-link to="/about">about me</nuxt-link>
-			</h3>
+<template>
+	<div>
+		<div class="intro">
+			<p class="intro__hi">Hi, my name name is</p>
+			<h1 class="intro__name">Alex Sizow</h1>
+
+			<div class="intro__photo">
+				<img
+					src="@/assets/images/I.png"
+					alt="I" />
+				<h2 class="intro__photo_about">
+					I’m a frontend developer in love with the Web,
+					browsers, ducks and France
+				</h2>
+				<h3 class="intro__photo_description">
+					Here you can find my thoughts on web development,
+					some of my
+					<a
+						href="https://github.com/alex-sizow"
+						target="_blank"
+						>projects</a
+					>, and information
+					<nuxt-link to="/about">about me</nuxt-link>
+				</h3>
+			</div>
+		</div>
+		<div>
+			<div
+				v-for="article in data"
+				:key="article._id">
+				<NuxtLink :to="article._path">
+					{{ article.title }}
+				</NuxtLink>
+				<p>{{ article.description }}</p>
+			</div>
 		</div>
 	</div>
 </template>
-
-<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
 .intro {

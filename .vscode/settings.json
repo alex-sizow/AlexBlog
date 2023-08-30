@@ -6,8 +6,11 @@
 		"**/CVS": true,
 		"**/.DS_Store": true,
 		"**/Thumbs.db": true,
-		"node_modules": false,
-		".vscode": true
+		"node_modules": true,
+		".vscode": true,
+		"pnpm-lock.yaml": true,
+		".npmrc": true,
+		".gitignore": true
 	},
 	"explorerExclude.backup": {}
 }

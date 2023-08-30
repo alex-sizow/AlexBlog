@@ -5,3 +5,5 @@
 # Dillinger
 
 ## _The Last Markdown Editor, Ever_
+
+[jQuery]: http://jquery.com
