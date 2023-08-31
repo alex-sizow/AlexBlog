@@ -1,45 +1,43 @@
 <script setup lang="ts">
+import ArticleList from '~/components/acticles/articleList.vue';
+
 const { data } = await useAsyncData(() => {
 	return queryContent('/articles/').find();
 });
 </script>
 
 <template>
-	<div>
-		<div class="intro">
-			<p class="intro__hi">Hi, my name name is</p>
-			<h1 class="intro__name">Alex Sizow</h1>
+	<div class="intro">
+		<p class="intro__hi">Hi, my name name is</p>
+		<h1 class="intro__name">Alex Sizow</h1>
 
-			<div class="intro__photo">
-				<img
-					src="@/assets/images/I.png"
-					alt="I" />
-				<h2 class="intro__photo_about">
-					I’m a frontend developer in love with the Web,
-					browsers, ducks and France
-				</h2>
-				<h3 class="intro__photo_description">
-					Here you can find my thoughts on web development,
-					some of my
-					<a
-						href="https://github.com/alex-sizow"
-						target="_blank"
-						>projects</a
-					>, and information
-					<nuxt-link to="/about">about me</nuxt-link>
-				</h3>
-			</div>
+		<div class="intro__photo">
+			<img
+				src="@/assets/images/I.png"
+				alt="I" />
+			<h2 class="intro__photo_about">
+				I’m a frontend developer in love with the Web,
+				browsers, ducks and France
+			</h2>
+			<h3 class="intro__photo_description">
+				Here you can find my thoughts on web development, some
+				of my
+				<a
+					href="https://github.com/alex-sizow"
+					target="_blank"
+					>projects</a
+				>, and information
+				<nuxt-link to="/about">about me</nuxt-link>
+			</h3>
 		</div>
-		<div>
-			<div
-				v-for="article in data"
-				:key="article._id">
-				<NuxtLink :to="article._path">
-					{{ article.title }}
-				</NuxtLink>
-				<p>{{ article.description }}</p>
-			</div>
+	</div>
+	<div class="articles">
+		<div class="articles__header">
+			<h1>ARTICLES</h1>
+			<nuxt-link to="/articles"> View all </nuxt-link>
 		</div>
+
+		<ArticleList :articles="data" />
 	</div>
 </template>
 
@@ -87,6 +85,39 @@ const { data } = await useAsyncData(() => {
 				color: black;
 				text-decoration: underline;
 			}
+		}
+	}
+}
+
+.articles {
+	margin-top: 110px;
+	&__header {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 2px solid black;
+		h1 {
+			font-size: 60px;
+		}
+		a {
+			font-size: 21px;
+			color: black;
+			text-decoration: underline;
+		}
+	}
+
+	&__list {
+		margin: 50px 0;
+		display: flex;
+		gap: 50px;
+		flex-wrap: wrap;
+		&_item {
+			background-color: #f2f0fe;
+			width: 320px;
+			height: 320px;
+			border-radius: 30px;
+			padding: 15px;
 		}
 	}
 }
