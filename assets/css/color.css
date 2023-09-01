@@ -1,4 +1,6 @@
 :root {
+	--bg: #f3f5f4;
+	--color-text: black;
 	--primary: oklch(62.85% 0.188 274.26);
 	--primary-hover: oklch(77.5% 0.109 277.77);
 	--second: oklch(64.57% 0.237 312.69);
