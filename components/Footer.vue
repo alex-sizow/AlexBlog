@@ -3,22 +3,44 @@
 		<div class="footer__section">
 			<h3 class="footer__title">Links</h3>
 			<ul class="footer__list">
-				<li>Twitter</li>
-				<li>Mastodon</li>
-				<li>Telegram</li>
-				<li>LinkedIn</li>
+				<a
+					href="https://twitter.com/AlexSizow"
+					target="_blank"
+					>Twitter</a
+				>
+				<a
+					href="https://twitter.com/AlexSizow"
+					target="_blank"
+					>Mastodon</a
+				>
+				<a
+					href="https://t.me/Sizifalex"
+					target="_blank"
+					>Telegram</a
+				>
+				<a
+					href="https://www.linkedin.com/in/alex-sizow/"
+					target="_blank"
+					>LinkedIn</a
+				>
 			</ul>
 		</div>
 		<div class="footer__section">
 			<h3 class="footer__title">Email</h3>
 			<ul class="footer__list">
-				<li>alex_sizow@outlook.com</li>
+				<a href="mailto:alex_sizow@outlook.com"
+					>alex_sizow@outlook.com</a
+				>
 			</ul>
 		</div>
 		<div class="footer__section">
 			<h3 class="footer__title">Credits</h3>
 			<ul class="footer__list">
-				<li>Github</li>
+				<a
+					href="https://github.com/alex-sizow"
+					target="_blank"
+					>Github</a
+				>
 				<li>
 					Designed by
 					<div>Andrey</div>

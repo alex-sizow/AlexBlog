@@ -1,7 +1,7 @@
 <template>
 	<section class="theme-switcher">
 		<button
-			v-for="color of ['system', 'light', 'dark']"
+			v-for="color of ['light', 'system', 'dark']"
 			:key="color"
 			class="theme-switcher__button"
 			@click="$colorMode.preference = color">
