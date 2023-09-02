@@ -7,6 +7,7 @@ const { data } = await useAsyncData(() => {
 </script>
 
 <template>
+	<title>Alex blog</title>
 	<div class="intro">
 		<p class="intro__hi">Hi, my name name is</p>
 		<h1 class="intro__name">Alex Sizow</h1>
@@ -64,7 +65,7 @@ const { data } = await useAsyncData(() => {
 		img {
 			width: 505px;
 			border-radius: 30px;
-			background-color: #febf70;
+			background-color: var(--bg-image);
 		}
 
 		&_about {
