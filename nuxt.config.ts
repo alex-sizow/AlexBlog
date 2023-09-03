@@ -14,7 +14,6 @@ export default defineNuxtConfig({
 		},
 	},
 	colorMode: {
-		preference: 'system',
 		fallback: 'light',
 		hid: 'nuxt-color-mode-script',
 		globalName: '__NUXT_COLOR_MODE__',

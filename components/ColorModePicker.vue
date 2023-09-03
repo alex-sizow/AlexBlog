@@ -1,25 +1,30 @@
 <script setup>
+const colorMode = useColorMode();
+
 const activePosition = ref(90);
-const activeWidth = ref(90);
+const activeWidth = ref(0);
 
 const positionHandler = (color) => {
 	switch (color) {
 		case 'light':
 			activePosition.value = 0;
-			activeWidth.value = 0;
+			activeWidth.value = 75;
 			break;
 		case 'system':
-			activePosition.value = 80;
-			activeWidth.value = 0;
+			activePosition.value = 75;
+			activeWidth.value = 80;
 			break;
 		case 'dark':
-			activePosition.value = 135;
-			activeWidth.value = 0;
+			activePosition.value = 152;
+			activeWidth.value = 65;
 			break;
 		default:
 			break;
 	}
 };
+onMounted(() => {
+	positionHandler(colorMode.preference);
+});
 </script>
 
 <template>
@@ -36,7 +41,10 @@ const positionHandler = (color) => {
 		</button>
 		<div
 			class="theme-switcher__status"
-			:style="{ left: activePosition + 'px' }"></div>
+			:style="{
+				left: activePosition + 'px',
+				width: activeWidth + 'px',
+			}"></div>
 	</section>
 </template>
 
@@ -45,10 +53,15 @@ const positionHandler = (color) => {
 	position: relative;
 	background: var(--bg);
 	padding: 3px 12px;
+	border: 1px solid black;
 	border-radius: 15px;
 	display: flex;
 	justify-content: space-around;
 	gap: 18px;
+
+	:nth-child(3) {
+		text-align: right;
+	}
 
 	&__button {
 		width: 52px;
@@ -59,10 +72,12 @@ const positionHandler = (color) => {
 	&__status {
 		position: absolute;
 		top: 0px;
-		background-color: red;
+
+		right: 75px;
+		background-color: var(--bg-image);
 		border-radius: 15px;
-		width: 80px;
 		height: 100%;
+		transition: all 0.5s ease;
 	}
 }
 </style>
