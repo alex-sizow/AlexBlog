@@ -124,3 +124,25 @@ label {
 legend {
 	display: block;
 }
+
+:root {
+	--scrll-bg: transparent !important; /* Background of the scrollbar */
+	--thumb: #6a6c6e6e !important; /* Thumb */
+	--thumb-hover: #5c87ffab !important ; /* Thumb on hover*/
+}
+
+::-webkit-scrollbar {
+	width: 1px !important;
+	height: 1px;
+	background: var(--scrll-bg) !important;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 3px;
+	background-color: var(--thumb) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	border-radius: 3px;
+	background-color: var(--thumb-hover) !important;
+}
