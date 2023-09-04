@@ -3,7 +3,8 @@
 <template>
 	<div>
 		<ContentDoc
-			:path="`/articles/${this.$route.params.id}`" />
+			:path="`/articles/${$route.params.id}`"
+			class="nuxt-content" />
 	</div>
 </template>
 

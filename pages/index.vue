@@ -18,7 +18,7 @@ const { data } = await useAsyncData(() => {
 				alt="I" />
 			<h2 class="intro__photo_about">
 				I’m a frontend developer in love with the Web,
-				browsers, ducks and France
+				browsers, ducks and culture.
 			</h2>
 			<h3 class="intro__photo_description">
 				Here you can find my thoughts on web development, some
@@ -66,6 +66,7 @@ const { data } = await useAsyncData(() => {
 			width: 505px;
 			border-radius: 30px;
 			background-color: var(--bg-image);
+			transition: all 1s ease;
 		}
 
 		&_about {

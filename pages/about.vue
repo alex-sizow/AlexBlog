@@ -1,14 +1,8 @@
 <template>
-	<div>About</div>
-	<div><ContentDoc path="/about" /></div>
-	<div draggable="true">
-		<p>привет</p>
-	</div>
-	<div draggable="false">
-		<p>че</p>
-	</div>
+	<ContentDoc
+		path="/about"
+		class="nuxt-content"
+		tag="article" />
 </template>
-
-<script setup lang="ts"></script>
 
 <style scoped></style>

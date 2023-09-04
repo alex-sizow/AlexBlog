@@ -6,11 +6,13 @@
 	--bg-secondary: #071521;
 	--border-color: #0d2538;
 	--bg-image: #de7b98;
+	--bg-content: rgb(252, 233, 219);
 }
 
 body {
 	background-color: var(--bg);
 	color: var(--color-text);
+	transition: all 1s ease;
 }
 
 a {

@@ -1,0 +1,40 @@
+.nuxt-content {
+	border-radius: 20px;
+	border: 1px solid black;
+	padding: 60px;
+	background: var(--bg-content);
+	color: black;
+	transition: all 0.6s ease;
+
+	pre {
+		margin-top: 10px;
+		border-radius: 12px;
+		padding: 15px;
+	}
+
+	h2 {
+		margin-top: 20px;
+		a {
+			color: black;
+			font-size: 55px;
+		}
+	}
+	p {
+		margin-top: 20px;
+		font-size: 19px;
+		line-height: 28px;
+		a {
+			color: red;
+		}
+	}
+	ul {
+		margin: 15px 0;
+
+		line-height: 28px;
+		li {
+			a {
+				color: red;
+			}
+		}
+	}
+}

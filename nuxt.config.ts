@@ -4,25 +4,18 @@ export default defineNuxtConfig({
 	experimental: {
 		viewTransition: true,
 	},
+
 	css: [
 		'@/assets/css/main.css',
 		'@/assets/css/color.css',
 		'@/assets/css/fonts.css',
 		'@/assets/css/theme.css',
+		'@/assets/css/content.scss',
 	],
 	modules: ['@nuxt/content', '@nuxtjs/color-mode'],
 	content: {
 		highlight: {
 			theme: 'light-plus',
 		},
-	},
-	colorMode: {
-		fallback: 'light',
-		hid: 'nuxt-color-mode-script',
-		globalName: '__NUXT_COLOR_MODE__',
-		componentName: 'ColorScheme',
-		classPrefix: '',
-		classSuffix: '-mode',
-		storageKey: 'nuxt-color-mode',
 	},
 });
