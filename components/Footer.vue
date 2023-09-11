@@ -52,10 +52,12 @@
 
 <style lang="scss" scoped>
 .footer {
-	border-top: 2px solid black;
+	border-top: 2px solid var(--color-text);
 	padding: 55px 30px;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 20px;
 	&__section {
 	}
 
@@ -68,6 +70,19 @@
 		display: flex;
 		flex-direction: column;
 		gap: 11px;
+	}
+}
+
+@media screen and (max-width: 390px) {
+	.footer {
+		justify-content: center;
+		&__title {
+			text-align: center;
+			font-size: 30px;
+		}
+		&__list {
+			text-align: center;
+		}
 	}
 }
 </style>

@@ -109,7 +109,7 @@ input:focus,
 input:active,
 button:focus,
 button:active {
-	outline: none;
+	outline: none !important;
 }
 
 button::-moz-focus-inner {

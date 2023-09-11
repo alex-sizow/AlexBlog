@@ -27,13 +27,14 @@ defineProps({
 	display: flex;
 	gap: 50px;
 	flex-wrap: wrap;
+	justify-content: space-evenly;
 	&__item {
 		display: flex;
 		flex-direction: column;
 		gap: 15px;
 		background-color: #f2f0fe;
 		width: 320px;
-		height: 370px;
+		height: 400px;
 		border-radius: 30px;
 		padding: 15px;
 
@@ -55,7 +56,7 @@ defineProps({
 			margin-left: 0px !important;
 			width: 100%;
 			border-radius: 15px;
-			min-height: 170px;
+			min-height: 200px;
 			background: #fdbf78;
 		}
 	}

@@ -58,10 +58,22 @@ const { data } = await useAsyncData(() => {
 		font-size: 140px;
 	}
 
+	@media screen and (max-width: 866px) {
+		&__hi {
+			position: static;
+			font-size: 25px;
+		}
+
+		&__name {
+			font-size: 90px;
+		}
+	}
+
 	&__photo {
-		width: 500px;
 		margin-top: 20px;
 		position: relative;
+		display: flex;
+		width: 500px;
 		img {
 			width: 505px;
 			border-radius: 30px;
@@ -86,6 +98,29 @@ const { data } = await useAsyncData(() => {
 			a {
 				color: black;
 				text-decoration: underline;
+			}
+		}
+
+		@media screen and (max-width: 866px) {
+			width: 100%;
+			flex-direction: column;
+			align-items: center;
+			img {
+				width: 100%;
+
+				border-radius: 30px;
+				background-color: var(--bg-image);
+				transition: all 1s ease;
+			}
+
+			&_description {
+				position: static;
+				margin-top: 40px;
+			}
+
+			&_about {
+				position: static;
+				margin-top: 40px;
 			}
 		}
 	}
