@@ -17,6 +17,9 @@ export default defineNuxtConfig({
       redirectOn: 'root',
     },
   },
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+  },
   vue: {
     vapor: true,
   },

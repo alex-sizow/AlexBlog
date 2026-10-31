@@ -7,9 +7,14 @@ body {
 }
 
 .shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
   max-width: 40rem;
   margin: 0 auto;
-  padding: 1.5rem;
+  & .shell__main {
+    padding: 1.75rem 1.5rem 1.5rem;
+  }
 }
 
 .home {
@@ -66,4 +71,21 @@ body {
 
 .notice {
   color: var(--v0-muted, oklch(0.474 0.016 260));
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 180ms ease;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter-active,
+  .page-leave-active {
+    transition: none;
+  }
 }

@@ -12,6 +12,12 @@
     "posts": "Articles",
     "register": "Inscription"
   },
+  "footer": {
+    "name": "Alex Sizov",
+    "note": "Notes courtes. © {year}",
+    "x": "X",
+    "linkedin": "LinkedIn"
+  },
   "home": {
     "title": "Alexblog",
     "lead": "Un petit blog. Les articles sont des exemples. L'inscription n'enregistre rien."
@@ -20,6 +26,11 @@
     "title": "Articles",
     "missing": "Article introuvable.",
     "emptyBody": "Cet article n'a pas encore de texte.",
+    "blabla": {
+      "title": "Blabla blabla",
+      "excerpt": "Un long article pour vérifier l'en-tête collé.",
+      "paragraph": "Blabla blabla. Paragraphe {n}. L'en-tête doit rester collé en haut pendant que ce texte défile. Blabla blabla blabla."
+    },
     "hello": {
       "title": "Bonjour",
       "excerpt": "Le premier article. Il n'y a pas encore de base."

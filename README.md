@@ -14,6 +14,8 @@ Vapor is on (`vue.vapor`). Pages that use i18n stay on the Virtual DOM.
 
 Languages are `en` and `fr` only. The URL does not change: `/posts` stays `/posts`.
 
+Page changes fade out, then the next page fades in.
+
 - `/` — home
 - `/posts` — post list
 - `/posts/:slug` — post page

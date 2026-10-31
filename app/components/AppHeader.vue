@@ -91,10 +91,15 @@ function current(path: string) {
 
 <style scoped>
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  margin-bottom: 1.75rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--v0-border, oklch(0.812 0.01 260));
+  background: var(--v0-surface, oklch(0.99 0.004 260));
 
   & .header__brand {
     flex: none;

@@ -12,6 +12,12 @@
     "posts": "Posts",
     "register": "Register"
   },
+  "footer": {
+    "name": "Alex Sizov",
+    "note": "Short notes. © {year}",
+    "x": "X",
+    "linkedin": "LinkedIn"
+  },
   "home": {
     "title": "Alexblog",
     "lead": "A small blog. Posts are placeholders. Registration does not save anything."
@@ -20,6 +26,11 @@
     "title": "Posts",
     "missing": "Post not found.",
     "emptyBody": "This post has no body yet.",
+    "blabla": {
+      "title": "Blah blah blah",
+      "excerpt": "A long post so the sticky header can be checked.",
+      "paragraph": "Blah blah blah. Paragraph {n}. The header should stay stuck at the top while this text scrolls away. Blah blah blah blah blah."
+    },
     "hello": {
       "title": "Hello",
       "excerpt": "The first post. There is no database yet."
