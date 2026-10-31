@@ -2,6 +2,11 @@
   "lang": {
     "label": "Language"
   },
+  "theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
   "nav": {
     "home": "Home",
     "posts": "Posts",

@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { useBreakpoints, useTheme } from '@vuetify/v0'
 import { watch } from 'vue'
+import type { ThemeId } from '~/theme'
 
 const theme = useTheme()
-const themeCookie = useCookie<'light' | 'dark'>('theme')
+const themeCookie = useCookie<ThemeId>('theme')
 const { locale } = useI18n()
 
 useHead(() => ({

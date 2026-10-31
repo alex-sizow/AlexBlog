@@ -1,12 +1,13 @@
 import { createBreakpointsPlugin, createHydrationPlugin, createLocalePlugin, createThemePlugin } from '@vuetify/v0'
 import { VueI18nLocaleAdapter } from '@vuetify/v0/locale/adapters/vue-i18n'
 import { V0UnheadThemeAdapter } from '@vuetify/v0/theme/adapters/unhead'
+import { themes, type ThemeId } from '~/theme'
 
 export default defineNuxtPlugin({
   name: 'v0',
   dependsOn: ['i18n:plugin'],
   setup(nuxtApp) {
-    const themeCookie = useCookie<'light' | 'dark'>('theme')
+    const themeCookie = useCookie<ThemeId>('theme')
     const widthCookie = useCookie<number>('viewport-width', {
       default: () => 1280,
     })
@@ -27,26 +28,7 @@ export default defineNuxtPlugin({
       createThemePlugin({
         adapter: new V0UnheadThemeAdapter(),
         default: themeCookie.value === 'dark' ? 'dark' : 'light',
-        themes: {
-          light: {
-            dark: false,
-            colors: {
-              primary: '#3b82f6',
-              surface: '#ffffff',
-              'on-primary': '#ffffff',
-              'on-surface': '#212121',
-            },
-          },
-          dark: {
-            dark: true,
-            colors: {
-              primary: '#60a5fa',
-              surface: '#1e1e1e',
-              'on-primary': '#1a1a1a',
-              'on-surface': '#e0e0e0',
-            },
-          },
-        },
+        themes,
       }),
     )
   },

@@ -2,12 +2,12 @@ body {
   margin: 0;
   font-family: system-ui, sans-serif;
   line-height: 1.5;
-  background: var(--v0-surface, #fff);
-  color: var(--v0-on-surface, #212121);
+  background: var(--v0-surface, oklch(0.99 0.004 260));
+  color: var(--v0-on-surface, oklch(0.248 0.012 260));
 }
 
 a {
-  color: var(--v0-primary, #3b82f6);
+  color: var(--v0-primary, oklch(0.623 0.188 260));
 }
 
 .shell {
@@ -34,21 +34,29 @@ nav {
   margin: 0.5rem 0 1.5rem;
 }
 
-.lang {
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem 1rem;
+}
+
+.switch {
   margin: 0;
 }
 
-.lang button {
+.switch button {
   margin: 0;
   padding: 0;
   border: 0;
   background: none;
-  color: var(--v0-primary, #3b82f6);
+  color: var(--v0-primary, oklch(0.623 0.188 260));
   font: inherit;
   cursor: pointer;
 }
 
-.lang button[aria-current='true'] {
+.switch button[aria-current='true'],
+.switch button[aria-pressed='true'] {
   font-weight: 700;
 }
 
@@ -77,8 +85,8 @@ input {
   width: 100%;
   margin-top: 0.25rem;
   padding: 0.4rem 0.6rem;
-  border: 1px solid color-mix(in srgb, var(--v0-on-surface, #212121) 25%, transparent);
-  background: var(--v0-surface, #fff);
+  border: 1px solid var(--v0-border, oklch(0.812 0.01 260));
+  background: var(--v0-surface, oklch(0.99 0.004 260));
   color: inherit;
   font: inherit;
 }
@@ -87,11 +95,11 @@ button {
   margin-top: 0.25rem;
   padding: 0.45rem 0.8rem;
   border: 0;
-  background: var(--v0-primary, #3b82f6);
-  color: var(--v0-on-primary, #fff);
+  background: var(--v0-primary, oklch(0.623 0.188 260));
+  color: var(--v0-on-primary, oklch(0.99 0.004 260));
   font: inherit;
 }
 
 .notice {
-  color: color-mix(in srgb, var(--v0-on-surface, #212121) 70%, transparent);
+  color: var(--v0-muted, oklch(0.474 0.016 260));
 }
