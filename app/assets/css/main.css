@@ -6,98 +6,62 @@ body {
   color: var(--v0-on-surface, oklch(0.248 0.012 260));
 }
 
-a {
-  color: var(--v0-primary, oklch(0.623 0.188 260));
-}
-
 .shell {
   max-width: 40rem;
   margin: 0 auto;
   padding: 1.5rem;
 }
 
-.brand {
-  margin: 0;
-  font-weight: 700;
-}
+.home {
+  & .home__links {
+    display: flex;
+    gap: 1rem;
+  }
 
-.top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-nav {
-  display: flex;
-  gap: 1rem;
-  margin: 0.5rem 0 1.5rem;
-}
-
-.tools {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.75rem 1rem;
-}
-
-.switch {
-  margin: 0;
-}
-
-.switch button {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--v0-primary, oklch(0.623 0.188 260));
-  font: inherit;
-  cursor: pointer;
-}
-
-.switch button[aria-current='true'],
-.switch button[aria-pressed='true'] {
-  font-weight: 700;
-}
-
-.home-links {
-  display: flex;
-  gap: 1rem;
+  & .home__link {
+    color: var(--v0-primary, oklch(0.623 0.188 260));
+  }
 }
 
 .posts {
   padding: 0;
   list-style: none;
-}
 
-.posts li + li {
-  margin-top: 1rem;
+  & .posts__item + .posts__item {
+    margin-top: 1rem;
+  }
+
+  & .posts__link {
+    color: var(--v0-primary, oklch(0.623 0.188 260));
+  }
 }
 
 .field {
   display: block;
   margin-bottom: 0.9rem;
+
+  & .field__control {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 0.25rem;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--v0-border, oklch(0.812 0.01 260));
+    background: var(--v0-surface, oklch(0.99 0.004 260));
+    color: inherit;
+    font: inherit;
+  }
 }
 
-input {
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-  margin-top: 0.25rem;
-  padding: 0.4rem 0.6rem;
-  border: 1px solid var(--v0-border, oklch(0.812 0.01 260));
-  background: var(--v0-surface, oklch(0.99 0.004 260));
-  color: inherit;
-  font: inherit;
-}
-
-button {
-  margin-top: 0.25rem;
-  padding: 0.45rem 0.8rem;
-  border: 0;
-  background: var(--v0-primary, oklch(0.623 0.188 260));
-  color: var(--v0-on-primary, oklch(0.99 0.004 260));
-  font: inherit;
+.register {
+  & .register__submit {
+    margin-top: 0.25rem;
+    padding: 0.45rem 0.8rem;
+    border: 0;
+    background: var(--v0-primary, oklch(0.623 0.188 260));
+    color: var(--v0-on-primary, oklch(0.99 0.004 260));
+    font: inherit;
+  }
 }
 
 .notice {

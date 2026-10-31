@@ -22,13 +22,13 @@ function onSubmit(payload: { valid: boolean }) {
 </script>
 
 <template>
-  <section>
+  <section class="register">
     <h1>{{ $t('register.title') }}</h1>
     <Form @submit="onSubmit">
       <label class="field" for="reg-name">
         {{ $t('register.name') }}
         <Input.Root id="reg-name" v-model="name" name="name" type="text" :label="t('register.name')" required>
-          <Input.Control autocomplete="name" />
+          <Input.Control class="field__control" autocomplete="name" />
           <Input.Error v-slot="{ errors }">
             <span v-for="message in errors" :key="message">{{ message }}</span>
           </Input.Error>
@@ -46,7 +46,7 @@ function onSubmit(payload: { valid: boolean }) {
           required
           :rules="[emailRule]"
         >
-          <Input.Control autocomplete="email" />
+          <Input.Control class="field__control" autocomplete="email" />
           <Input.Error v-slot="{ errors }">
             <span v-for="message in errors" :key="message">{{ message }}</span>
           </Input.Error>
@@ -64,7 +64,7 @@ function onSubmit(payload: { valid: boolean }) {
           required
           :rules="[passwordRule]"
         >
-          <Input.Control autocomplete="new-password" />
+          <Input.Control class="field__control" autocomplete="new-password" />
           <Input.Error v-slot="{ errors }">
             <span v-for="message in errors" :key="message">{{ message }}</span>
           </Input.Error>
@@ -72,7 +72,7 @@ function onSubmit(payload: { valid: boolean }) {
       </label>
 
       <!-- Button.Root always sets type="button" and does not submit the form. -->
-      <button type="submit">{{ $t('register.submit') }}</button>
+      <button class="register__submit" type="submit">{{ $t('register.submit') }}</button>
     </Form>
     <p v-if="notice" class="notice">{{ notice }}</p>
   </section>
