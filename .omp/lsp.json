@@ -1,0 +1,10 @@
+{
+  "servers": {
+    "postgres-language-server": {
+      "command": "postgres-language-server",
+      "args": ["lsp-proxy"],
+      "fileTypes": [".sql"],
+      "rootMarkers": ["postgres-language-server.jsonc"]
+    }
+  }
+}

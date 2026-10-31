@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  background: var(--v0-surface, #fff);
+  color: var(--v0-on-surface, #212121);
+}
+
+a {
+  color: var(--v0-primary, #3b82f6);
+}
+
+.shell {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.brand {
+  margin: 0;
+  font-weight: 700;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.lang {
+  margin: 0;
+}
+
+.lang button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--v0-primary, #3b82f6);
+  font: inherit;
+  cursor: pointer;
+}
+
+.lang button[aria-current='true'] {
+  font-weight: 700;
+}
+
+.home-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.posts {
+  padding: 0;
+  list-style: none;
+}
+
+.posts li + li {
+  margin-top: 1rem;
+}
+
+.field {
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--v0-on-surface, #212121) 25%, transparent);
+  background: var(--v0-surface, #fff);
+  color: inherit;
+  font: inherit;
+}
+
+button {
+  margin-top: 0.25rem;
+  padding: 0.45rem 0.8rem;
+  border: 0;
+  background: var(--v0-primary, #3b82f6);
+  color: var(--v0-on-primary, #fff);
+  font: inherit;
+}
+
+.notice {
+  color: color-mix(in srgb, var(--v0-on-surface, #212121) 70%, transparent);
+}

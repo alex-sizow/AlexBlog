@@ -1,0 +1,40 @@
+{
+  "lang": {
+    "label": "Langue"
+  },
+  "nav": {
+    "home": "Accueil",
+    "posts": "Articles",
+    "register": "Inscription"
+  },
+  "home": {
+    "title": "Alexblog",
+    "lead": "Un petit blog. Les articles sont des exemples. L'inscription n'enregistre rien."
+  },
+  "posts": {
+    "title": "Articles",
+    "missing": "Article introuvable.",
+    "emptyBody": "Cet article n'a pas encore de texte.",
+    "hello": {
+      "title": "Bonjour",
+      "excerpt": "Le premier article. Il n'y a pas encore de base."
+    },
+    "skeleton": {
+      "title": "Squelette",
+      "excerpt": "Les routes existent. La publication n'est pas branchée."
+    }
+  },
+  "register": {
+    "title": "Inscription",
+    "name": "Nom",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "emailInvalid": "Indiquez une adresse e-mail.",
+    "passwordShort": "Au moins 8 caractères.",
+    "submit": "S'inscrire",
+    "notice": "Squelette : rien n'est envoyé."
+  },
+  "Input": {
+    "required": "Obligatoire"
+  }
+}

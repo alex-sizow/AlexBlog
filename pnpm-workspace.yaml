@@ -1,0 +1,19 @@
+allowBuilds:
+  esbuild: true
+minimumReleaseAgeExclude:
+  - ws@8.22.1
+
+# Nuxt 4.6 / Vue 3.6 RC pull packages younger than one day (rollup 4.67.2 and others).
+# The pnpm 12 default (1440) blocks install.
+minimumReleaseAge: 0
+overrides:
+  vue: 3.6.0-rc.14
+  "@vue/compiler-core": 3.6.0-rc.14
+  "@vue/compiler-dom": 3.6.0-rc.14
+  "@vue/compiler-sfc": 3.6.0-rc.14
+  "@vue/reactivity": 3.6.0-rc.14
+  "@vue/runtime-core": 3.6.0-rc.14
+  "@vue/runtime-dom": 3.6.0-rc.14
+  "@vue/runtime-vapor": 3.6.0-rc.14
+  "@vue/server-renderer": 3.6.0-rc.14
+  "@vue/shared": 3.6.0-rc.14

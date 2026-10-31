@@ -1,0 +1,40 @@
+{
+  "lang": {
+    "label": "Language"
+  },
+  "nav": {
+    "home": "Home",
+    "posts": "Posts",
+    "register": "Register"
+  },
+  "home": {
+    "title": "Alexblog",
+    "lead": "A small blog. Posts are placeholders. Registration does not save anything."
+  },
+  "posts": {
+    "title": "Posts",
+    "missing": "Post not found.",
+    "emptyBody": "This post has no body yet.",
+    "hello": {
+      "title": "Hello",
+      "excerpt": "The first post. There is no database yet."
+    },
+    "skeleton": {
+      "title": "Skeleton",
+      "excerpt": "Routes exist. Publishing is not wired."
+    }
+  },
+  "register": {
+    "title": "Register",
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "emailInvalid": "Enter an email address.",
+    "passwordShort": "At least 8 characters.",
+    "submit": "Register",
+    "notice": "Skeleton: nothing is sent."
+  },
+  "Input": {
+    "required": "Required"
+  }
+}
