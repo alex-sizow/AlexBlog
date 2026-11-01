@@ -2,26 +2,34 @@ export interface Post {
   slug: string
   titleKey: string
   excerptKey: string
-  bodyKey?: string
-  paragraphs?: number
 }
 
 export const posts: Post[] = [
-  {
-    slug: 'blabla',
-    titleKey: 'posts.blabla.title',
-    excerptKey: 'posts.blabla.excerpt',
-    bodyKey: 'posts.blabla.paragraph',
-    paragraphs: 40,
-  },
   {
     slug: 'hello',
     titleKey: 'posts.hello.title',
     excerptKey: 'posts.hello.excerpt',
   },
   {
-    slug: 'skeleton',
-    titleKey: 'posts.skeleton.title',
-    excerptKey: 'posts.skeleton.excerpt',
+    slug: 'fences',
+    titleKey: 'posts.fences.title',
+    excerptKey: 'posts.fences.excerpt',
   },
 ]
+
+const rawBodies = import.meta.glob('./bodies/*.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+})
+
+const bodies = new Map<string, string>()
+for (const [path, source] of Object.entries(rawBodies)) {
+  if (typeof source !== 'string') continue
+  const name = path.split('/').pop()?.replace(/\?.*$/, '')
+  if (name) bodies.set(name, source)
+}
+
+export function postBody(slug: string, locale: string): string | null {
+  return bodies.get(`${slug}.${locale}.md`) ?? null
+}

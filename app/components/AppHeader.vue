@@ -35,7 +35,13 @@ function current(path: string) {
 
 <template>
   <header class="header">
-    <NuxtLink class="header__brand" :to="localePath('/')">Alexblog</NuxtLink>
+    <NuxtLink class="header__brand" :to="localePath('/')">
+      <svg class="header__mark" viewBox="0 0 40 34" aria-hidden="true">
+        <circle cx="12" cy="13" r="10" fill="var(--v0-pink, oklch(0.869 0.070 19))" stroke="currentColor" stroke-width="2.25" />
+        <polygon points="23,2 26.6,12.2 37.5,12.4 28.8,18.8 32,29.2 23,23.2 14,29.2 17.2,18.8 8.5,12.4 19.4,12.2" fill="var(--v0-yellow, oklch(0.947 0.103 99))" stroke="currentColor" stroke-width="2.25" stroke-linejoin="round" />
+      </svg>
+      Alexblog
+    </NuxtLink>
     <nav class="header__nav">
       <NuxtLink
         v-for="link in links"
@@ -95,69 +101,94 @@ function current(path: string) {
   top: 0;
   z-index: 1;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 1.25rem;
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid var(--v0-border, oklch(0.812 0.01 260));
-  background: var(--v0-surface, oklch(0.99 0.004 260));
+  gap: 0.75rem 1rem;
+  padding: 0.9rem 1.25rem;
+  border-bottom: var(--stroke, 3px) solid var(--v0-border, oklch(0 0 0));
+  background: var(--v0-surface, oklch(1 0 0));
+  color: var(--v0-on-surface, oklch(0 0 0));
 
   & .header__brand {
+    display: inline-flex;
     flex: none;
+    align-items: center;
+    gap: 0.45rem;
     color: inherit;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: -0.04em;
     text-decoration: none;
+  }
+
+  & .header__mark {
+    display: block;
+    width: 2.35rem;
+    height: 2rem;
+    flex: none;
   }
 
   & .header__nav {
     display: flex;
-    gap: 0.9rem;
+    flex-wrap: wrap;
+    gap: 0.45rem;
     min-width: 0;
     margin: 0;
   }
 
   & .header__link {
-    color: var(--v0-primary, oklch(0.623 0.188 260));
+    padding: 0.2rem 0.55rem;
+    border: var(--stroke, 3px) solid transparent;
+    border-radius: var(--radius, 8px);
+    color: inherit;
+    font-weight: 700;
     text-decoration: none;
     white-space: nowrap;
 
+    &:hover {
+      background: var(--v0-pink, oklch(0.869 0.070 19));
+      color: var(--v0-ink, oklch(0 0 0));
+    }
+
     &.header__link--current {
-      font-weight: 700;
-      text-decoration: underline;
-      text-underline-offset: 0.2em;
+      border-color: var(--v0-ink, oklch(0 0 0));
+      background: var(--v0-yellow, oklch(0.947 0.103 99));
+      color: var(--v0-ink, oklch(0 0 0));
     }
   }
 
   & .header__tools {
     display: flex;
-    flex: none;
+    flex: 1 0 100%;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.65rem;
-    margin-left: auto;
+    gap: 0.5rem;
+    margin-left: 0;
   }
 
   & .header__switch {
     display: flex;
     margin: 0;
-    border: 1px solid var(--v0-border, oklch(0.812 0.01 260));
-    border-radius: 999px;
+    border: var(--stroke, 3px) solid var(--v0-border, oklch(0 0 0));
+    border-radius: var(--radius, 8px);
+    background: var(--v0-surface, oklch(1 0 0));
   }
 
   & .header__option {
     margin: 0;
-    padding: 0.15rem 0.55rem;
+    padding: 0.2rem 0.55rem;
     border: 0;
-    border-radius: 999px;
+    border-radius: 5px;
     background: none;
-    color: var(--v0-muted, oklch(0.474 0.016 260));
+    color: var(--v0-muted, oklch(0.510 0 0));
     font: inherit;
+    font-weight: 700;
     line-height: 1.4;
     white-space: nowrap;
     cursor: pointer;
 
     &.header__option--on {
-      background: var(--v0-primary, oklch(0.623 0.188 260));
-      color: var(--v0-on-primary, oklch(0.99 0.004 260));
-      font-weight: 600;
+      background: var(--v0-yellow, oklch(0.947 0.103 99));
+      color: var(--v0-ink, oklch(0 0 0));
     }
   }
 }

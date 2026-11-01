@@ -43,13 +43,15 @@ function leave(event: MouseEvent) {
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
-  background: var(--v0-surface, oklch(0.99 0.004 260));
-  color: var(--v0-on-surface, oklch(0.248 0.012 260));
+  background: var(--v0-canvas, oklch(0.922 0 0));
+  color: var(--v0-on-surface, oklch(0 0 0));
+  font-family: var(--font, Outfit, sans-serif);
 }
 
 .miss-page__bar {
-  width: min(100%, 40rem);
+  width: min(100%, var(--frame, 42rem));
   margin: 0 auto;
+  background: var(--v0-surface, oklch(1 0 0));
 }
 
 .miss {
@@ -79,9 +81,8 @@ function leave(event: MouseEvent) {
 }
 
 .miss__num {
-  font-family: Montserrat, "Arial Black", Impact, sans-serif;
-  font-size: min(42vw, 60vh);
-  font-weight: 900;
+  font-family: Outfit, "Arial Black", Impact, sans-serif;
+  font-weight: 800;
   line-height: 0.8;
 }
 

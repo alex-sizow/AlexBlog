@@ -36,8 +36,8 @@ const profiles = [
   justify-content: space-between;
   gap: 1rem;
   margin-top: auto;
-  padding: 0.85rem 1.5rem 1rem;
-  border-top: 1px solid var(--v0-border, oklch(0.812 0.01 260));
+  padding: 0.9rem 1.25rem 1.05rem;
+  border-top: var(--stroke, 3px) solid var(--v0-border, oklch(0 0 0));
 
   & .footer__name,
   & .footer__note {
@@ -45,21 +45,22 @@ const profiles = [
   }
 
   & .footer__name {
-    color: var(--v0-on-surface, oklch(0.248 0.012 260));
-    font-size: 0.92rem;
-    font-weight: 650;
+    color: var(--v0-on-surface, oklch(0 0 0));
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
     line-height: 1.3;
   }
 
   & .footer__note {
-    color: var(--v0-muted, oklch(0.474 0.016 260));
+    color: var(--v0-muted, oklch(0.510 0 0));
     font-size: 0.8rem;
     line-height: 1.35;
   }
 
   & .footer__profiles {
     display: flex;
-    gap: 0.4rem;
+    gap: 0.45rem;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -68,21 +69,21 @@ const profiles = [
   & .footer__link {
     display: grid;
     place-items: center;
-    width: 1.75rem;
-    height: 1.75rem;
-    border: 1px solid var(--v0-border, oklch(0.812 0.01 260));
-    border-radius: 999px;
-    color: var(--v0-muted, oklch(0.474 0.016 260));
+    width: 2.1rem;
+    height: 2.1rem;
+    border: var(--stroke, 3px) solid var(--v0-border, oklch(0 0 0));
+    border-radius: var(--radius, 8px);
+    color: var(--v0-on-surface, oklch(0 0 0));
 
     &:hover {
-      color: var(--v0-on-surface, oklch(0.248 0.012 260));
-      border-color: var(--v0-muted, oklch(0.474 0.016 260));
+      background: var(--v0-yellow, oklch(0.947 0.103 99));
+      color: var(--v0-ink, oklch(0 0 0));
     }
   }
 
   & .footer__icon {
-    width: 0.8rem;
-    height: 0.8rem;
+    width: 0.85rem;
+    height: 0.85rem;
     background: currentColor;
     mask-position: center;
     mask-repeat: no-repeat;

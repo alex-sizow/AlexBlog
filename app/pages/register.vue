@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Form, Input } from '@vuetify/v0'
+import { Alert, Form, Input } from '@vuetify/v0'
 import { shallowRef } from 'vue'
 
 const { t } = useI18n()
@@ -23,14 +23,14 @@ function onSubmit(payload: { valid: boolean }) {
 
 <template>
   <section class="register">
-    <h1>{{ $t('register.title') }}</h1>
+    <h1 class="display">{{ $t('register.title') }}</h1>
     <Form @submit="onSubmit">
       <label class="field" for="reg-name">
         {{ $t('register.name') }}
         <Input.Root id="reg-name" v-model="name" name="name" type="text" :label="t('register.name')" required>
           <Input.Control class="field__control" autocomplete="name" />
           <Input.Error v-slot="{ errors }">
-            <span v-for="message in errors" :key="message">{{ message }}</span>
+            <span v-for="message in errors" :key="message" class="field__error">{{ message }}</span>
           </Input.Error>
         </Input.Root>
       </label>
@@ -48,7 +48,7 @@ function onSubmit(payload: { valid: boolean }) {
         >
           <Input.Control class="field__control" autocomplete="email" />
           <Input.Error v-slot="{ errors }">
-            <span v-for="message in errors" :key="message">{{ message }}</span>
+            <span v-for="message in errors" :key="message" class="field__error">{{ message }}</span>
           </Input.Error>
         </Input.Root>
       </label>
@@ -66,7 +66,7 @@ function onSubmit(payload: { valid: boolean }) {
         >
           <Input.Control class="field__control" autocomplete="new-password" />
           <Input.Error v-slot="{ errors }">
-            <span v-for="message in errors" :key="message">{{ message }}</span>
+            <span v-for="message in errors" :key="message" class="field__error">{{ message }}</span>
           </Input.Error>
         </Input.Root>
       </label>
@@ -74,6 +74,8 @@ function onSubmit(payload: { valid: boolean }) {
       <!-- Button.Root always sets type="button" and does not submit the form. -->
       <button class="register__submit" type="submit">{{ $t('register.submit') }}</button>
     </Form>
-    <p v-if="notice" class="notice">{{ notice }}</p>
+    <Alert.Root v-if="notice" class="notice" role="status">
+      <Alert.Description>{{ notice }}</Alert.Description>
+    </Alert.Root>
   </section>
 </template>

@@ -20,24 +20,19 @@
   },
   "home": {
     "title": "Alexblog",
-    "lead": "A small blog. Posts are placeholders. Registration does not save anything."
+    "lead": "A small blog. Posts are markdown. Registration does not save anything."
   },
   "posts": {
     "title": "Posts",
     "missing": "Post not found.",
     "emptyBody": "This post has no body yet.",
-    "blabla": {
-      "title": "Blah blah blah",
-      "excerpt": "A long post so the sticky header can be checked.",
-      "paragraph": "Blah blah blah. Paragraph {n}. The header should stay stuck at the top while this text scrolls away. Blah blah blah blah blah."
-    },
     "hello": {
       "title": "Hello",
-      "excerpt": "The first post. There is no database yet."
+      "excerpt": "A short note, with a bit of code."
     },
-    "skeleton": {
-      "title": "Skeleton",
-      "excerpt": "Routes exist. Publishing is not wired."
+    "fences": {
+      "title": "Fences",
+      "excerpt": "Headings, a list, and fenced code."
     }
   },
   "register": {
