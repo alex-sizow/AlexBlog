@@ -18,7 +18,7 @@ Languages are `en` and `fr` only. The URL does not change: `/posts` stays `/post
 
 Page changes fade out, then the next page fades in.
 
-- `/` — home
+- `/` — home, with a cartoon duck (WebGPU). Drag turns it; a click quacks. The duck is the CC0 [Rubber Duck Toy](https://polyhaven.com/a/rubber_duck_toy) by Plat251 on Poly Haven.
 - `/posts` — post list
 - `/posts/:slug` — post page
 - `/register` — registration form; it does not submit anywhere

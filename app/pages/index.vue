@@ -1,5 +1,6 @@
 <template>
   <section class="home">
+    <HomeDuck />
     <h1 class="display">{{ $t('home.title') }}</h1>
     <p class="home__lead">{{ $t('home.lead') }}</p>
     <p class="home__links">

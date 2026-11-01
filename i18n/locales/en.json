@@ -22,7 +22,12 @@
   },
   "home": {
     "title": "Alexblog",
-    "lead": "A small blog. Posts are markdown. Registration does not save anything."
+    "lead": "A small blog. Posts are markdown. Registration does not save anything.",
+    "duck": "Cartoon duck",
+    "hint": "Drag or use arrow keys to turn. Click to quack.",
+    "quack": "Quack!",
+    "fallback": "This browser cannot show the duck.",
+    "credit": "Duck by Plat251, Poly Haven (CC0)."
   },
   "posts": {
     "title": "Posts",

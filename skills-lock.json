@@ -7,6 +7,12 @@
       "skillPath": "skills/supabase-postgres-best-practices/SKILL.md",
       "computedHash": "e14e276241805c97dbcfe40dcbea1a3035269cc7293cac4b1832dda41a835e60"
     },
+    "vgpu": {
+      "source": "vercel-labs/vgpu",
+      "sourceType": "github",
+      "skillPath": "skills/vgpu/SKILL.md",
+      "computedHash": "d7e9f06fe05c0b6ad5c44ffbd75e1946e731847fda769db130bf7bf622f651cd"
+    },
     "vuetify0": {
       "source": "vuetifyjs/0",
       "sourceType": "github",

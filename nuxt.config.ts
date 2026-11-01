@@ -1,3 +1,5 @@
+import wgslVitePlugin from '@vgpu/wgsl/loader-vite'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -29,6 +31,9 @@ export default defineNuxtConfig({
   },
   vue: {
     vapor: true,
+  },
+  vite: {
+    plugins: [wgslVitePlugin()],
   },
   build: {
     transpile: ['@vuetify/v0'],

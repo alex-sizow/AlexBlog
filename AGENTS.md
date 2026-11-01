@@ -8,6 +8,7 @@ Nuxt 4 + `@vuetify/v0` (https://0.vuetifyjs.com/). This is not Vuetify 3/4 and n
 - Interfaces: `Form`, `Input`, `Button` from `@vuetify/v0`. Do not hand-roll selection, form, or dialog behavior if the `vuetify0` skill already names it.
 - `Button.Root` always sets `type="button"`. Form submit is a native `<button type="submit">`.
 - CSS: BEM (`block`, `block__element`, `block--modifier`) with native nesting (`& .block__element`, `&.block__element--modifier`). Do not concatenate `&__` or `&--`: the browser drops those rules. A scoped child component is `&:deep(child)`, not a bare nested `:deep()`. No Sass, no tag selectors for component styles.
+- Home duck: WebGPU scene in `app/duck/` via `vgpu`. `.wgsl` imports need `@vgpu/wgsl` as a direct dependency (same release as `vgpu`) and `wgslVitePlugin()` in `nuxt.config.ts`. The mesh is the CC0 Poly Haven rubber duck in `public/duck/`.
 - Skeleton: static posts in `app/data/posts.ts`. Registration does not persist. There is no Postgres schema.
 - Postgres language server: `postgres-language-server lsp-proxy`, config `postgres-language-server.jsonc`, connection disabled.
 - Project skills: `.agents/skills/vuetify0`, `.agents/skills/supabase-postgres-best-practices`. Nuxt has no official skill — do not install third-party ones.
