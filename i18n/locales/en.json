@@ -8,6 +8,8 @@
     "dark": "Dark"
   },
   "nav": {
+    "label": "Navigation",
+    "menu": "Menu",
     "home": "Home",
     "posts": "Posts",
     "register": "Register"
