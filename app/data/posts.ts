@@ -2,6 +2,7 @@ export interface Post {
   slug: string
   titleKey: string
   excerptKey: string
+  image: string
 }
 
 export const posts: Post[] = [
@@ -9,11 +10,19 @@ export const posts: Post[] = [
     slug: 'hello',
     titleKey: 'posts.hello.title',
     excerptKey: 'posts.hello.excerpt',
+    image: '/covers/hello.webp',
   },
   {
     slug: 'fences',
     titleKey: 'posts.fences.title',
     excerptKey: 'posts.fences.excerpt',
+    image: '/covers/fences.webp',
+  },
+  {
+    slug: 'scroll',
+    titleKey: 'posts.scroll.title',
+    excerptKey: 'posts.scroll.excerpt',
+    image: '/covers/scroll.webp',
   },
 ]
 

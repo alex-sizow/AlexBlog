@@ -11,8 +11,8 @@ const localePath = useLocalePath()
       </NuxtLink>
       <HeaderNav />
       <div class="header__tools">
-        <ThemeTumbler />
-        <LocaleTumbler />
+        <TumblerTheme />
+        <TumblerLocale />
       </div>
     </div>
   </header>
@@ -82,5 +82,11 @@ const localePath = useLocalePath()
     align-items: center;
     gap: 0.5rem;
   }
+}
+</style>
+
+<style>
+:root {
+  --header-block: calc(3rem + 1.4rem + var(--stroke, 3px));
 }
 </style>

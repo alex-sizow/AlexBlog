@@ -12,6 +12,7 @@
     "menu": "Menu",
     "home": "Accueil",
     "posts": "Articles",
+    "about": "À propos",
     "register": "Inscription"
   },
   "footer": {
@@ -31,6 +32,7 @@
   },
   "posts": {
     "title": "Articles",
+    "back": "Retour aux articles",
     "missing": "Article introuvable.",
     "emptyBody": "Cet article n'a pas encore de texte.",
     "hello": {
@@ -40,7 +42,16 @@
     "fences": {
       "title": "Blocs",
       "excerpt": "Titres, une liste, et du code clôturé."
+    },
+    "scroll": {
+      "title": "Défilement",
+      "excerpt": "Une note longue, assez pour faire bouger la barre."
     }
+  },
+  "about": {
+    "title": "À propos",
+    "lead": "Alex Sizov. Notes courtes, écrites en markdown.",
+    "body": "Ce site est un squelette. Les articles sont des fichiers statiques. Le formulaire d'inscription n'enregistre rien."
   },
   "register": {
     "title": "Inscription",

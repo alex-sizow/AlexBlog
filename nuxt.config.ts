@@ -29,6 +29,10 @@ export default defineNuxtConfig({
     },
     pageTransition: { name: 'page', mode: 'out-in' },
   },
+  // Nuxt 4.6.4 resolves an unset devServer.host to {}; the dev CLI then crashes on hostname.toLowerCase.
+  devServer: {
+    host: 'localhost',
+  },
   vue: {
     vapor: true,
   },

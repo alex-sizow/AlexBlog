@@ -5,6 +5,7 @@ import { onMounted, shallowRef, watch } from 'vue'
 const links = [
   { to: '/', key: 'nav.home' },
   { to: '/posts', key: 'nav.posts' },
+  { to: '/about', key: 'nav.about' },
   { to: '/register', key: 'nav.register' },
 ] as const
 

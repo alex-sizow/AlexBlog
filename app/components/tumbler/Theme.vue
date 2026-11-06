@@ -15,12 +15,12 @@ const label = computed(() => `${t('theme.label')}: ${t(dark.value ? 'theme.dark'
 </script>
 
 <template>
-  <Tumbler v-model="dark" namespace="header:theme" :label="label">
+  <TumblerShell v-model="dark" namespace="header:theme" :label="label">
     <template #off>
       <span class="tumbler__glyph tumbler__glyph--emoji tumbler__glyph--sun" aria-hidden="true">☀️</span>
     </template>
     <template #on>
       <span class="tumbler__glyph tumbler__glyph--emoji tumbler__glyph--moon" aria-hidden="true">🌕</span>
     </template>
-  </Tumbler>
+  </TumblerShell>
 </template>

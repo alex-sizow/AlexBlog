@@ -17,7 +17,7 @@ const label = computed(() => `${t('lang.label')}: ${langName.value}`)
 </script>
 
 <template>
-  <Tumbler v-model="french" namespace="header:lang" :label="label">
+  <TumblerShell v-model="french" namespace="header:lang" :label="label">
     <template #off>
       <span class="tumbler__glyph" aria-hidden="true">
         <svg class="locale-tumbler__mark" viewBox="15 0 30 30" width="17" height="17">
@@ -38,7 +38,7 @@ const label = computed(() => `${t('lang.label')}: ${langName.value}`)
         </svg>
       </span>
     </template>
-  </Tumbler>
+  </TumblerShell>
 </template>
 
 <style scoped>

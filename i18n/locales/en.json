@@ -12,6 +12,7 @@
     "menu": "Menu",
     "home": "Home",
     "posts": "Posts",
+    "about": "About",
     "register": "Register"
   },
   "footer": {
@@ -31,6 +32,7 @@
   },
   "posts": {
     "title": "Posts",
+    "back": "Back to posts",
     "missing": "Post not found.",
     "emptyBody": "This post has no body yet.",
     "hello": {
@@ -40,7 +42,16 @@
     "fences": {
       "title": "Fences",
       "excerpt": "Headings, a list, and fenced code."
+    },
+    "scroll": {
+      "title": "Scroll",
+      "excerpt": "A long note, enough to move the reading bar."
     }
+  },
+  "about": {
+    "title": "About",
+    "lead": "Alex Sizov. Short notes, written as markdown.",
+    "body": "This site is a skeleton. Posts are static files. The registration form does not save anything."
   },
   "register": {
     "title": "Register",
