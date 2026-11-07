@@ -5,13 +5,14 @@ const featured = posts.slice(0, 3)
 </script>
 
 <template>
-  <section class="home">
+  <div class="home">
+    <HomeIntro />
     <ul class="home__posts">
       <li class="home__posts-item" v-for="post in featured" :key="post.slug">
         <PostPreview :post="post" />
       </li>
     </ul>
-  </section>
+  </div>
 </template>
 
 <style scoped>

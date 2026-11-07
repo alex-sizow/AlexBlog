@@ -9,6 +9,7 @@ Nuxt 4 + `@vuetify/v0` (https://0.vuetifyjs.com/). This is not Vuetify 3/4 and n
 - `Button.Root` always sets `type="button"`. Form submit is a native `<button type="submit">`.
 - CSS: BEM (`block`, `block__element`, `block--modifier`) with native nesting (`& .block__element`, `&.block__element--modifier`). Do not concatenate `&__` or `&--`: the browser drops those rules. A scoped child component is `&:deep(child)`, not a bare nested `:deep()`. No Sass, no tag selectors for component styles.
 - Home duck: WebGPU scene in `app/duck/` via `vgpu`, not mounted on `/` for now. `.wgsl` imports need `@vgpu/wgsl` as a direct dependency (same release as `vgpu`) and `wgslVitePlugin()` in `nuxt.config.ts`. The mesh is the CC0 Poly Haven rubber duck in `public/duck/`.
+- Home intro: `HomeIntro` in `app/components/home/Intro.vue`. Shout name, greeting in column 2, cutout duck on a plate that follows the theme (`light-dark` yellow / primary), bio overlapping the plate, scribble behind the name. Portrait asset is `public/intro-duck.png` (logo with the pink field removed).
 - Gutter flock: repeating rubber-duck mask on the canvas outside `.shell`, rotated 20°. Tile is the CC0 OpenClipart duck (`public/icons/duck.png`, from Wikimedia `File:Rubber_duck.svg`). Hidden when the column fills the viewport.
 - Skeleton: static posts in `app/data/posts.ts`. Registration does not persist. There is no Postgres schema.
 - Postgres language server: `postgres-language-server lsp-proxy`, config `postgres-language-server.jsonc`, connection disabled.

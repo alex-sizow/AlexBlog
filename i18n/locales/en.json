@@ -26,7 +26,12 @@
     "hint": "Drag or use arrow keys to turn. Click to quack.",
     "quack": "Quack!",
     "fallback": "This browser cannot show the duck.",
-    "credit": "Duck by Plat251, Poly Haven (CC0)."
+    "credit": "Duck by Plat251, Poly Haven (CC0).",
+    "intro": {
+      "hi": "Hi, my name is",
+      "who": "I keep short notes, written as markdown.",
+      "what": "Posts are static files. The registration form does not save anything."
+    }
   },
   "posts": {
     "title": "Posts",

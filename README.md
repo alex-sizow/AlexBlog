@@ -18,7 +18,7 @@ Languages are `en` and `fr` only. The URL does not change: `/posts` stays `/post
 
 Page changes fade out, then the next page fades in.
 
-- `/` — home starts with three post cards. The WebGPU duck is not shown for now.
+- `/` — home opens with the name, a theme plate, then three post cards. The WebGPU duck is not shown for now.
 - `/posts` — post list, square cards with a picture
 - `/about` — about this site
 - `/posts/:slug` — post page, cover beside the title

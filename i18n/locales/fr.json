@@ -26,7 +26,12 @@
     "hint": "Glisser ou flèches pour tourner. Cliquer pour coin-coin.",
     "quack": "Coin !",
     "fallback": "Ce navigateur ne peut pas afficher le canard.",
-    "credit": "Canard par Plat251, Poly Haven (CC0)."
+    "credit": "Canard par Plat251, Poly Haven (CC0).",
+    "intro": {
+      "hi": "Salut, je m'appelle",
+      "who": "Je tiens des notes courtes, écrites en markdown.",
+      "what": "Les articles sont des fichiers statiques. Le formulaire d'inscription n'enregistre rien."
+    }
   },
   "posts": {
     "title": "Articles",
