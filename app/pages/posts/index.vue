@@ -15,17 +15,16 @@ import { posts } from '~/data/posts'
 
 <style scoped>
 .posts {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 14rem), 1fr));
   gap: 0.85rem;
+  min-width: 0;
   margin: 0;
   padding: 0;
   list-style: none;
 
   & .posts__item {
-    flex: 1 1 14rem;
-    min-width: min(100%, 14rem);
-    max-width: 100%;
+    min-width: 0;
   }
 }
 </style>
