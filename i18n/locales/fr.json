@@ -22,8 +22,6 @@
     "linkedin": "LinkedIn"
   },
   "home": {
-    "title": "Alexblog",
-    "lead": "Un petit blog. Les articles sont en markdown. L'inscription n'enregistre rien.",
     "duck": "Canard cartoon",
     "hint": "Glisser ou flèches pour tourner. Cliquer pour coin-coin.",
     "quack": "Coin !",
@@ -46,6 +44,10 @@
     "scroll": {
       "title": "Défilement",
       "excerpt": "Une note longue, assez pour faire bouger la barre."
+    },
+    "night": {
+      "title": "Nuit",
+      "excerpt": "Clair, sombre, et le cookie qui garde le choix."
     }
   },
   "about": {

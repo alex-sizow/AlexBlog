@@ -7,7 +7,9 @@ const theme = useTheme()
 const dark = computed({
   get: () => theme.selectedId.value === 'dark',
   set: (on: boolean) => {
-    theme.select(on ? 'dark' : 'light')
+    crossfade(() => {
+      theme.select(on ? 'dark' : 'light')
+    })
   },
 })
 

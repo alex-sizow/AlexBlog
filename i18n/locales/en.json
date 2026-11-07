@@ -22,8 +22,6 @@
     "linkedin": "LinkedIn"
   },
   "home": {
-    "title": "Alexblog",
-    "lead": "A small blog. Posts are markdown. Registration does not save anything.",
     "duck": "Cartoon duck",
     "hint": "Drag or use arrow keys to turn. Click to quack.",
     "quack": "Quack!",
@@ -46,6 +44,10 @@
     "scroll": {
       "title": "Scroll",
       "excerpt": "A long note, enough to move the reading bar."
+    },
+    "night": {
+      "title": "Night",
+      "excerpt": "Light, dark, and the cookie that keeps the choice."
     }
   },
   "about": {

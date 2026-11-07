@@ -1,31 +1,21 @@
 The two notes above this one fit on a screen. This one does not. It is here so the bar beside the back link has a distance to travel.
 
-Open it, do not touch the wheel yet, and look at the pill. It should be empty. The top of the box is still below the top of the window. A short stripe after a little scroll means the note is taller than the window.
+Open it, do not touch the wheel yet, and look at the pill. A long note shows the share already in the window. It is not empty, and it is not full. A short stripe means most of the box is still below the window.
 
 ## What it measures
 
-The meter watches the article box, not the words. Headings, lists, fences, and the cover all add height. A blank line does too. The fill does not know which paragraph you are reading. It knows how far the top of the box has moved up, and how much of the box is left below the window.
+The meter watches the article box, not the words. Headings, lists, fences, and the cover all add height. A blank line does too. The fill does not know which paragraph you are reading. It knows how much of the box has entered the window, from the top of the box to the bottom of the window.
 
-A note shorter than the window is not full on arrival. Hello and Fences already sit inside the window, so the stripe is partway along. It fills when their top reaches the top of the window.
+A note that already fits in the window is full. You have seen all of it. It does not sit at half because it occupies half the window.
 
-When the article is taller, the value stays at 0 until the top of the box reaches the top of the window. Then it climbs. It hits 100 when the bottom of the box reaches the bottom of the window. That is the whole rule.
+When the article is taller, the value starts at that share. It hits 100 when the bottom of the box reaches the bottom of the window. Scroll back to the top and it returns to the share still in the window. It empties only when the box is entirely below the window.
 
-```css
-.reader {
-  timeline-scope: --read;
-}
-
-.reader__article {
-  view-timeline: --read block;
-}
-
-.meter__fill {
-  animation-timeline: --read;
-  animation-range: contain;
-}
+```ts
+const seen = Math.min(Math.max(viewHeight - top, 0), height)
+const read = height > 0 ? seen / height : 0
 ```
 
-The header is sticky, and the reader bar sticks under it. The timeline still uses the full window, so the stripe runs a little ahead of the line you are on. Close is enough for a bar.
+The header is sticky, and the reader bar sticks under it. The formula uses the full window, so a line that has crossed the top still counts. Close is enough for a bar.
 
 ## Before you scroll
 
@@ -61,11 +51,11 @@ If this heading is near the middle of the window, the stripe should be near the 
 
 Do not trust a guess from the scrollbar either. The page scrollbar includes the header, the reader bar, and the footer. The meter ignores those. It can sit at 40 while the scrollbar thumb looks further along, or the other way around. That split is the point of measuring the article box.
 
-Stop here and resize the window. Taller window, the stripe jumps ahead. Shorter window, it falls back. The timeline follows the box. No listener, and no reload.
+Stop here and resize the window. Taller window, the stripe jumps ahead. Shorter window, it falls back. The fill follows the box. No reload.
 
 ## Pictures and late height
 
-The cover image can arrive after the first paint. If it changes the box, the fill has to catch up. A meter that froze on the empty plate will lie until the next scroll. Scroll once after the picture lands if you are not sure. Then scroll back. The value should return to the same place.
+The cover image can arrive after the first paint. If it changes the box, the fill has to catch up without another scroll.
 
 A broken image still occupies the cover frame. The plate is a square in the header of the article. Missing bytes should not collapse the box to zero, and should not throw the value to 100 by mistake.
 
@@ -79,7 +69,7 @@ Switch back. The English box returns. The value should move again, even if you d
 
 ## A slower pass
 
-Read this stretch without watching the pill. Then look up. The stripe should have moved by about the amount of text that left the window. If it has not moved at all, the timeline is not attached to the article box. If it moved and then stuck, the range has ended. Empty means the top of the box is still below the top of the window. Full means the bottom has reached the bottom of the window.
+Read this stretch without watching the pill. Then look up. The stripe should have moved by about the amount of text that left the window. If it has not moved at all, the box is not the one being measured. Empty means the box is entirely below the window. Full means the bottom has reached the bottom of the window, or the whole box already fits.
 
 The back link should still work from here. It does not need the article. The list is the parent. Opening this note in a new tab and pressing the link should still land on the posts page.
 
@@ -93,6 +83,6 @@ The footer is outside the article box. Reaching it is not required for a full pi
 
 ## The last line
 
-This is the last paragraph. When it sits at the bottom of the window, the pill should be full. Scroll back to the cover. The stripe should shrink, then empty, once the top of the article is back below the top of the window.
+This is the last paragraph. When it sits at the bottom of the window, the pill should be full. Scroll back to the cover. The stripe should shrink to the share still in the window. It should not empty while the top of the note is on screen.
 
-That is the test. A long note, a bar that moves, a link that leaves. The other two notes stay short on purpose.
+That is the test. A long note, a bar that moves, a link that leaves. The short notes stay short on purpose.

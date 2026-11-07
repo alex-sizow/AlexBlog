@@ -24,6 +24,12 @@ export const posts: Post[] = [
     excerptKey: 'posts.scroll.excerpt',
     image: '/covers/scroll.webp',
   },
+  {
+    slug: 'night',
+    titleKey: 'posts.night.title',
+    excerptKey: 'posts.night.excerpt',
+    image: '/covers/night.webp',
+  },
 ]
 
 const rawBodies = import.meta.glob('./bodies/*.md', {

@@ -4,7 +4,7 @@ const { t, locale, locales, setLocale } = useI18n()
 const french = computed({
   get: () => locale.value === 'fr',
   set: (on: boolean) => {
-    void setLocale(on ? 'fr' : 'en')
+    crossfade(() => setLocale(on ? 'fr' : 'en'))
   },
 })
 

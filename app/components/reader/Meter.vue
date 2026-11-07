@@ -23,16 +23,8 @@
     width: 100%;
     height: 100%;
     background: var(--v0-primary, oklch(0.482 0.298 277));
+    transform: scaleX(var(--read, 0));
     transform-origin: left center;
-    animation: reader-read linear both;
-    animation-duration: auto;
-    animation-timeline: --read;
-    animation-range: contain;
   }
-}
-
-@keyframes reader-read {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
 }
 </style>

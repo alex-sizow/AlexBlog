@@ -123,6 +123,7 @@ onBeforeUnmount(() => {
     height: 100%;
     touch-action: none;
     cursor: grab;
+    view-transition-name: stage-canvas;
 
     &:active {
       cursor: grabbing;

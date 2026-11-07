@@ -1,31 +1,21 @@
 Les deux notes au-dessus tiennent sur un écran. Celle-ci non. Elle est là pour que la barre, à côté du lien retour, ait une distance à parcourir.
 
-L'ouvrir sans toucher la molette, et regarder la pilule. Elle doit être vide. Le haut de la boîte est encore sous le haut de la fenêtre. Une courte bande après un petit défilement veut dire que la note est plus haute que la fenêtre.
+L'ouvrir sans toucher la molette, et regarder la pilule. Une note longue montre la part déjà dans la fenêtre. Elle n'est ni vide, ni pleine. Une courte bande veut dire que la plus grande part de la boîte est encore sous la fenêtre.
 
 ## Ce qu'elle mesure
 
-Le mètre regarde la boîte de l'article, pas les mots. Titres, listes, blocs de code et couverture ajoutent de la hauteur. Une ligne vide aussi. Le remplissage ne sait pas quel paragraphe est à l'écran. Il sait de combien le haut de la boîte est monté, et combien de boîte reste sous la fenêtre.
+Le mètre regarde la boîte de l'article, pas les mots. Titres, listes, blocs de code et couverture ajoutent de la hauteur. Une ligne vide aussi. Le remplissage ne sait pas quel paragraphe est à l'écran. Il sait quelle part de la boîte est entrée dans la fenêtre, du haut de la boîte au bas de la fenêtre.
 
-Une note plus courte que la fenêtre n'est pas pleine à l'arrivée. Bonjour et Blocs sont déjà dans la fenêtre, donc la bande est à mi-chemin. Elle se remplit quand leur haut atteint le haut de la fenêtre.
+Une note qui tient déjà dans la fenêtre est pleine. On l'a vue en entier. Elle ne reste pas à moitié parce qu'elle occupe la moitié de la fenêtre.
 
-Quand l'article est plus haut, la valeur reste à 0 tant que le haut de la boîte n'a pas atteint le haut de la fenêtre. Ensuite elle monte. Elle atteint 100 quand le bas de la boîte atteint le bas de la fenêtre. C'est toute la règle.
+Quand l'article est plus haut, la valeur part de cette part. Elle atteint 100 quand le bas de la boîte atteint le bas de la fenêtre. Remonter en haut la ramène à la part encore dans la fenêtre. Elle se vide seulement quand la boîte est entièrement sous la fenêtre.
 
-```css
-.reader {
-  timeline-scope: --read;
-}
-
-.reader__article {
-  view-timeline: --read block;
-}
-
-.meter__fill {
-  animation-timeline: --read;
-  animation-range: contain;
-}
+```ts
+const seen = Math.min(Math.max(viewHeight - top, 0), height)
+const read = height > 0 ? seen / height : 0
 ```
 
-L'en-tête est collé, et la barre de lecture se colle dessous. La timeline utilise encore toute la fenêtre, donc la bande a un peu d'avance sur la ligne visible. Pour une barre, proche suffit.
+L'en-tête est collé, et la barre de lecture se colle dessous. La formule utilise toute la fenêtre, donc une ligne qui a passé le haut compte encore. Pour une barre, proche suffit.
 
 ## Avant de défiler
 
@@ -61,11 +51,11 @@ Si ce titre est près du milieu de la fenêtre, la bande devrait être près du 
 
 La barre de défilement de la page n'est pas un meilleur témoin. Elle inclut l'en-tête, la barre de lecture et le pied. Le mètre les ignore. Il peut être à 40 pendant que le curseur de la barre semble plus loin, ou l'inverse. Cet écart est le sens de mesurer la boîte de l'article.
 
-Ici, redimensionner la fenêtre. Fenêtre plus haute, la bande avance d'un coup. Fenêtre plus basse, elle recule. La timeline suit la boîte. Pas d'écouteur, pas de rechargement.
+Ici, redimensionner la fenêtre. Fenêtre plus haute, la bande avance d'un coup. Fenêtre plus basse, elle recule. Le remplissage suit la boîte. Pas de rechargement.
 
 ## Images et hauteur tardive
 
-L'image de couverture peut arriver après le premier rendu. Si elle change la boîte, le remplissage doit rattraper. Un mètre figé sur la plaque vide ment jusqu'au prochain défilement. Un défilement après l'arrivée de l'image, puis un retour. La valeur doit retrouver la même place.
+L'image de couverture peut arriver après le premier rendu. Si elle change la boîte, le remplissage doit rattraper sans un autre défilement.
 
 Une image cassée occupe encore le cadre de la couverture. La plaque est un carré dans l'en-tête de l'article. Des octets manquants ne doivent pas réduire la boîte à zéro, ni envoyer la valeur à 100 par erreur.
 
@@ -79,7 +69,7 @@ Retour à l'anglais. La boîte anglaise revient. La valeur doit bouger encore, m
 
 ## Un passage plus lent
 
-Lire ce passage sans regarder la pilule. Puis lever les yeux. La bande devrait avoir avancé d'à peu près le texte qui a quitté la fenêtre. Si elle n'a pas bougé du tout, la timeline n'est pas attachée à la boîte de l'article. Si elle a bougé puis s'est figée, la plage est finie. Vide veut dire que le haut de la boîte est encore sous le haut de la fenêtre. Pleine veut dire que le bas a atteint le bas de la fenêtre.
+Lire ce passage sans regarder la pilule. Puis lever les yeux. La bande devrait avoir avancé d'à peu près le texte qui a quitté la fenêtre. Si elle n'a pas bougé du tout, la boîte mesurée n'est pas celle de l'article. Vide veut dire que la boîte est entièrement sous la fenêtre. Pleine veut dire que le bas a atteint le bas de la fenêtre, ou que toute la boîte tient déjà dedans.
 
 Le lien retour doit encore marcher d'ici. Il n'a pas besoin de l'article. La liste est le parent. Ouvrir cette note dans un nouvel onglet et presser le lien doit quand même atterrir sur la page des articles.
 
@@ -93,6 +83,6 @@ Le pied est hors de la boîte de l'article. L'atteindre n'est pas requis pour un
 
 ## La dernière ligne
 
-Ceci est le dernier paragraphe. Quand il est au bas de la fenêtre, la pilule doit être pleine. Remonter jusqu'à la couverture. La bande doit rétrécir, puis se vider, une fois que le haut de l'article est de nouveau sous le haut de la fenêtre.
+Ceci est le dernier paragraphe. Quand il est au bas de la fenêtre, la pilule doit être pleine. Remonter jusqu'à la couverture. La bande doit rétrécir jusqu'à la part encore dans la fenêtre. Elle ne doit pas se vider tant que le haut de la note est à l'écran.
 
-C'est le test. Une note longue, une barre qui bouge, un lien qui sort. Les deux autres notes restent courtes exprès.
+C'est le test. Une note longue, une barre qui bouge, un lien qui sort. Les notes courtes restent courtes exprès.

@@ -1,11 +1,36 @@
+<script setup lang="ts">
+import { posts } from '~/data/posts'
+
+const featured = posts.slice(0, 3)
+</script>
+
 <template>
   <section class="home">
-    <HomeDuck />
-    <h1 class="display">{{ $t('home.title') }}</h1>
-    <p class="home__lead">{{ $t('home.lead') }}</p>
-    <p class="home__links">
-      <NuxtLink class="home__link" :to="$localePath('/posts')">{{ $t('nav.posts') }}</NuxtLink>
-      <NuxtLink class="home__link home__link--primary" :to="$localePath('/register')">{{ $t('nav.register') }}</NuxtLink>
-    </p>
+    <ul class="home__posts">
+      <li class="home__posts-item" v-for="post in featured" :key="post.slug">
+        <PostPreview :post="post" />
+      </li>
+    </ul>
   </section>
 </template>
+
+<style scoped>
+.home__posts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  & .home__posts-item {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 40rem) {
+  .home__posts {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
