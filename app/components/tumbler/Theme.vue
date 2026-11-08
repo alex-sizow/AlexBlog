@@ -3,10 +3,12 @@ import { useTheme } from '@vuetify/v0'
 
 const { t } = useI18n()
 const theme = useTheme()
+const themeCookie = useCookie<'light' | 'dark'>('theme')
 
 const dark = computed({
   get: () => theme.selectedId.value === 'dark',
   set: (on: boolean) => {
+    themeCookie.value = on ? 'dark' : 'light'
     crossfade(() => {
       theme.select(on ? 'dark' : 'light')
     })

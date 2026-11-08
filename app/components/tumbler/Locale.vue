@@ -1,10 +1,13 @@
 <script setup lang="ts">
 const { t, locale, locales, setLocale } = useI18n()
+const localeCookie = useCookie<'en' | 'fr'>('lang')
 
 const french = computed({
   get: () => locale.value === 'fr',
   set: (on: boolean) => {
-    crossfade(() => setLocale(on ? 'fr' : 'en'))
+    const next = on ? 'fr' : 'en'
+    localeCookie.value = next
+    crossfade(() => setLocale(next))
   },
 })
 

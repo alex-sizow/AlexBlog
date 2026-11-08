@@ -7,7 +7,12 @@ export default defineNuxtPlugin({
   name: 'v0',
   dependsOn: ['i18n:plugin'],
   setup(nuxtApp) {
-    const themeCookie = useCookie<ThemeId>('theme')
+    const choice = useCookie<string | null>('theme')
+    const seen = useCookie<string | null>('color-scheme')
+    // ponytail: SSR uses last seen scheme; live prefers-color-scheme applies after hydrate
+    const initial: ThemeId = choice.value === 'light' || choice.value === 'dark'
+      ? choice.value
+      : seen.value === 'dark' ? 'dark' : 'light'
     const widthCookie = useCookie<number>('viewport-width', {
       default: () => 1280,
     })
@@ -27,7 +32,7 @@ export default defineNuxtPlugin({
     nuxtApp.vueApp.use(
       createThemePlugin({
         adapter: new V0UnheadThemeAdapter(),
-        default: themeCookie.value === 'dark' ? 'dark' : 'light',
+        default: initial,
         themes,
       }),
     )
